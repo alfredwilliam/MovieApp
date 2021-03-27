@@ -20,7 +20,6 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.alfred.movieapp.data.MovieRepository;
-import com.alfred.movieapp.ui.main.MainActivityViewModel;
 
 /**
  * Factory method that allows us to create a ViewModel with a constructor that takes a

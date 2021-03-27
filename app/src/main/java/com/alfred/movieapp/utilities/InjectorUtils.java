@@ -24,7 +24,6 @@ import com.alfred.movieapp.data.MovieRepository;
 import com.alfred.movieapp.ui.homeFragment.HomeViewModelFactory;
 import com.alfred.movieapp.ui.info.InfoViewModelFactory;
 import com.alfred.movieapp.ui.main.FavViewModelFactory;
-import com.alfred.movieapp.ui.main.MainViewModelFactory;
 import com.alfred.movieapp.ui.review.ReviewViewModelFactory;
 import com.alfred.movieapp.ui.searchFragment.SearchViewModelFactory;
 import com.alfred.movieapp.ui.topRatingFragment.TopRatingViewModelFactory;

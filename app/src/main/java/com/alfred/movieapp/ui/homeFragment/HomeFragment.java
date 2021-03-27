@@ -33,13 +33,8 @@ import com.alfred.movieapp.R;
 import com.alfred.movieapp.databinding.HomeFragmentBinding;
 import com.alfred.movieapp.model.Movie;
 import com.alfred.movieapp.ui.detail.DetailActivity;
-import com.alfred.movieapp.ui.main.FavoriteAdapter;
-import com.alfred.movieapp.ui.main.MainActivity;
-import com.alfred.movieapp.ui.main.MainActivityViewModel;
-import com.alfred.movieapp.ui.main.MainViewModelFactory;
 import com.alfred.movieapp.ui.main.MoviePagedListAdapter;
 import com.alfred.movieapp.utilities.InjectorUtils;
-import com.blankj.utilcode.util.ToastUtils;
 import com.google.android.material.snackbar.Snackbar;
 
 import static com.alfred.movieapp.utilities.Constant.EXTRA_MOVIE;
