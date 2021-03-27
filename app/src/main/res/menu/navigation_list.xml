@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:title="now playing"
+        android:icon="@drawable/ic_in_theatre"
+        android:checked="true"
+        android:iconTint="@color/colorAccent"/>
+
+    <item
+        android:id="@+id/topRatedFragment"
+        android:title="Top Rated"
+        android:icon="@drawable/ic_top_rated"
+        android:iconTint="@color/colorAccent"/>
+
+    <item
+        android:id="@+id/searchFragment"
+        android:title="Search"
+        android:icon="@drawable/ic_search"
+        android:iconTint="@color/colorAccent"/>
+
+
+
+
+
+    <!--<item
+        android:id="@+id/menuFragment"
+        android:icon="@drawable/ic_menu"
+        android:title=""
+        android:iconTint="@color/colorAccent"/>-->
+
+</menu>
