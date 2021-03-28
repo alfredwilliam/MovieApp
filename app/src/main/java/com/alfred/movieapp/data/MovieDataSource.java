@@ -35,24 +35,12 @@ import static com.alfred.movieapp.utilities.Constant.NEXT_PAGE_KEY_TWO;
 import static com.alfred.movieapp.utilities.Constant.PREVIOUS_PAGE_KEY_ONE;
 import static com.alfred.movieapp.utilities.Constant.RESPONSE_CODE_API_STATUS;
 
-/**
- * The MovieDataSource is the base class for loading snapshots of movie data into a given PagedList,
- * which is backed by the network. Since the TMDb API includes a key with each page load, extend
- * from PageKeyedDataSource.
- *
- * Reference: @see "https://proandroiddev.com/8-steps-to-implement-paging-library-in-android-d02500f7fffe"
- * "https://www.youtube.com/watch?v=Ts-uxYiBEQ8" "https://www.youtube.com/watch?v=QVMqCRs0BNA"
- * "https://codelabs.developers.google.com/codelabs/android-paging/index.html#2"
- */
 public class MovieDataSource extends PageKeyedDataSource<Integer, Movie> {
 
-    /** Tag for logging */
     private static final String TAG = MovieDataSource.class.getSimpleName();
 
-    /** Member variable for TheMovieApi interface */
     private TheMovieApi mTheMovieApi;
 
-    /** String for the sort order of the movies */
     private String mSortCriteria;
 
     public MovieDataSource(String sortCriteria) {
@@ -60,9 +48,6 @@ public class MovieDataSource extends PageKeyedDataSource<Integer, Movie> {
         mSortCriteria = sortCriteria;
     }
 
-    /**
-     * This method is called first to initialize a PageList with data.
-     */
     @Override
     public void loadInitial(@NonNull LoadInitialParams<Integer> params,
                             @NonNull final LoadInitialCallback<Integer, Movie> callback) {
@@ -88,18 +73,12 @@ public class MovieDataSource extends PageKeyedDataSource<Integer, Movie> {
                 });
     }
 
-    /**
-     * Prepend page with the key specified by LoadParams.key
-     */
     @Override
     public void loadBefore(@NonNull LoadParams<Integer> params,
                            @NonNull LoadCallback<Integer, Movie> callback) {
 
     }
 
-    /**
-     * Append page with the key specified by LoadParams.key
-     */
     @Override
     public void loadAfter(@NonNull LoadParams<Integer> params,
                           @NonNull final LoadCallback<Integer, Movie> callback) {

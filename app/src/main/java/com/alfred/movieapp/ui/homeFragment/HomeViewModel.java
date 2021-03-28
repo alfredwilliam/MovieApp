@@ -20,7 +20,6 @@ import static com.alfred.movieapp.utilities.Constant.PAGE_SIZE;
 import static com.alfred.movieapp.utilities.Constant.PREFETCH_DISTANCE;
 
 public class HomeViewModel extends ViewModel {
-    // TODO: Implement the ViewModel
 
     private final MovieRepository mRepository;
 
@@ -33,16 +32,12 @@ public class HomeViewModel extends ViewModel {
         init(sortCriteria);
     }
 
-    /**
-     * Initialize the paged list
-     */
     private void init(String sortCriteria) {
         Executor executor = Executors.newFixedThreadPool(NUMBER_OF_FIXED_THREADS_FIVE);
 
-        // Create a MovieDataSourceFactory providing DataSource generations
         MovieDataSourceFactory movieDataFactory = new MovieDataSourceFactory("now_playing");
 
-        // Configures how a PagedList loads content from the MovieDataSource
+
         PagedList.Config config = (new PagedList.Config.Builder())
                 .setEnablePlaceholders(false)
                 // Size hint for initial load of PagedList

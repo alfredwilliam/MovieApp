@@ -26,12 +26,6 @@ import androidx.room.TypeConverters;
 
 import static com.alfred.movieapp.utilities.Constant.DATABASE_NAME;
 
-/**
- * {@link MovieDatabase} database for the application including a table for {@link MovieEntry}
- * with the DAO {@link MovieDao}
- */
-
-// List of the entry classes and associated TypeConverters
 @Database(entities = {MovieEntry.class}, version = 1, exportSchema = false)
 @TypeConverters(DateConverter.class)
 public abstract class MovieDatabase extends RoomDatabase {

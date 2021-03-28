@@ -18,9 +18,6 @@ package com.alfred.movieapp.model;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- * A {@link Review} object includes information related to a movie review.
- */
 public class Review {
 
     @SerializedName("author")

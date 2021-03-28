@@ -26,10 +26,6 @@ import java.util.List;
 
 import static com.alfred.movieapp.utilities.Constant.BYTE;
 
-/**
- * A {@link Credits} object includes information related to movie cast and crew.
- * This class implements Parcelable interface to allow {@link Credits} object to be sent as a Parcel
- */
 public class Credits implements Parcelable {
 
     @SerializedName("cast")

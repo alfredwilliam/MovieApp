@@ -21,9 +21,6 @@ import androidx.paging.DataSource;
 
 import com.alfred.movieapp.model.Movie;
 
-/**
- * The MovieSearchDataSourceFactory is responsible for creating a DataSource.
- */
 public class MovieSearchDataSourceFactory extends DataSource.Factory<Integer, Movie> {
 
     private MutableLiveData<MovieSearchDataSource> mPostLiveData;

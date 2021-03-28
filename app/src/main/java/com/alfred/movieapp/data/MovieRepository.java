@@ -38,13 +38,8 @@ import static com.alfred.movieapp.utilities.Constant.CREDITS;
 import static com.alfred.movieapp.utilities.Constant.LANGUAGE;
 import static com.alfred.movieapp.utilities.Constant.PAGE;
 
-/**
- * MovieRepository is responsible for handling data operations in PopularMovies. Acts as a mediator
- * between {@link TheMovieApi} and {@link MovieDao}
- */
 public class MovieRepository {
 
-    /** Tag for logging */
     private static final String TAG = MovieRepository.class.getSimpleName();
 
     // For Singleton instantiation
@@ -74,11 +69,6 @@ public class MovieRepository {
         return sInstance;
     }
 
-    /**
-     * Make a network request by calling enqueue and provide a LiveData object of MovieDetails for ViewModel
-     *
-     * @param movieId The ID of the movie
-     */
     public LiveData<MovieDetails> getMovieDetails(int movieId) {
         final MutableLiveData<MovieDetails> movieDetailsData = new MutableLiveData<>();
 
@@ -105,11 +95,6 @@ public class MovieRepository {
         return movieDetailsData;
     }
 
-    /**
-     * Make a network request by calling enqueue and provide a LiveData object of ReviewResponse for ViewModel
-     *
-     * @param movieId The ID of the movie
-     */
     public LiveData<ReviewResponse> getReviewResponse(int movieId) {
         final MutableLiveData<ReviewResponse> reviewResponseData = new MutableLiveData<>();
 
@@ -117,9 +102,6 @@ public class MovieRepository {
         // https://api.themoviedb.org/3/movie/{id}/reviews?api_key={API_KEY}&language=en-US&page=1
         mTheMovieApi.getReviews(movieId, API_KEY, LANGUAGE, PAGE)
                 .enqueue(new Callback<ReviewResponse>() {
-                    /**
-                     * Invoked for a received HTTP response.
-                     */
                     @Override
                     public void onResponse(Call<ReviewResponse> call, Response<ReviewResponse> response) {
                         if (response.isSuccessful()) {
@@ -128,10 +110,6 @@ public class MovieRepository {
                         }
                     }
 
-                    /**
-                     * Invoked when a network exception occurred talking to the server or when an unexpected exception
-                     * occurred creating the request or processing the response.
-                     */
                     @Override
                     public void onFailure(Call<ReviewResponse> call, Throwable t) {
                         reviewResponseData.setValue(null);
@@ -141,11 +119,6 @@ public class MovieRepository {
         return reviewResponseData;
     }
 
-    /**
-     * Make a network request by calling enqueue and provide a LiveData object of VideoResponse for ViewModel
-     *
-     * @param movieId The ID of the movie
-     */
     public LiveData<VideoResponse> getVideoResponse(int movieId) {
         final MutableLiveData<VideoResponse> videoResponseData = new MutableLiveData<>();
 
@@ -172,18 +145,10 @@ public class MovieRepository {
         return videoResponseData;
     }
 
-    /**
-     * Return a LiveData of the list of MovieEntries directly from the database
-     */
     public LiveData<List<MovieEntry>> getFavoriteMovies() {
         return mMovieDao.loadAllMovies();
     }
 
-    /**
-     * Returns a LiveData of MovieEntry directly from the database
-     *
-     * @param movieId The movie ID
-     */
     public LiveData<MovieEntry> getFavoriteMovieByMovieId(int movieId) {
         return mMovieDao.loadMovieByMovieId(movieId);
     }

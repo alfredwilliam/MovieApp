@@ -22,9 +22,6 @@ import androidx.lifecycle.ViewModel;
 import com.alfred.movieapp.data.MovieRepository;
 import com.alfred.movieapp.model.VideoResponse;
 
-/**
- * {@link ViewModel} for TrailerFragment
- */
 public class TrailerViewModel extends ViewModel {
 
     private final MovieRepository mRepository;

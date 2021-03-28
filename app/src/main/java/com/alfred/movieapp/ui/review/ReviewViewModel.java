@@ -22,9 +22,7 @@ import androidx.lifecycle.ViewModel;
 import com.alfred.movieapp.data.MovieRepository;
 import com.alfred.movieapp.model.ReviewResponse;
 
-/**
- * {@link ViewModel} for ReviewFragment
- */
+
 public class ReviewViewModel extends ViewModel {
     private final MovieRepository mRepository;
     private final LiveData<ReviewResponse> mReviewResponse;

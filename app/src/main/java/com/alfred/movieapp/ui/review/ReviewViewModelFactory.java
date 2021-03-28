@@ -21,10 +21,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.alfred.movieapp.data.MovieRepository;
 
-/**
- * Factory method that allows us to create a ViewModel with a constructor that takes a
- * {@link MovieRepository} and the movie ID
- */
+
 public class ReviewViewModelFactory extends ViewModelProvider.NewInstanceFactory  {
 
     private final MovieRepository mRepository;

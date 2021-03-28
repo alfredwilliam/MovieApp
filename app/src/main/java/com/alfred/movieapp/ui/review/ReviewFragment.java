@@ -48,27 +48,18 @@ import static com.alfred.movieapp.utilities.Constant.EXTRA_MOVIE;
 
 public class ReviewFragment extends Fragment implements ReviewAdapter.ReviewAdapterOnClickHandler {
 
-    /** Tag for a log message */
     private static final String TAG = ReviewFragment.class.getSimpleName();
 
-    /** Member variable for the list of reviews */
     private List<Review> mReviews;
 
-    /** This field is used for data binding */
     private FragmentReviewBinding mReviewBinding;
 
-    /** Member variable for ReviewAdapter */
     private ReviewAdapter mReviewAdapter;
 
-    /** Member variable for the Movie object */
     private Movie mMovie;
 
-    /** ViewModel for ReviewFragment */
     private ReviewViewModel mReviewViewModel;
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the fragment
-     */
     public ReviewFragment() {
     }
 
@@ -76,13 +67,9 @@ public class ReviewFragment extends Fragment implements ReviewAdapter.ReviewAdap
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        // Store the Intent
         Intent intent = getActivity().getIntent();
-        // Check if the Intent is not null, and has the extra we passed from MainActivity
         if (intent != null) {
             if (intent.hasExtra(EXTRA_MOVIE)) {
-                // Receive the Movie object which contains information, such as ID, original title,
-                // poster path, overview, vote average, release date, backdrop path.
                 Bundle b = intent.getBundleExtra(EXTRA_MOVIE);
                 mMovie = b.getParcelable(EXTRA_MOVIE);
             }
@@ -92,9 +79,7 @@ public class ReviewFragment extends Fragment implements ReviewAdapter.ReviewAdap
         setupViewModel(this.getActivity());
     }
 
-    /**
-     * Every time the user data is updated, the onChanged callback will be invoked and update the UI
-     */
+
     private void setupViewModel(Context context) {
         ReviewViewModelFactory factory = InjectorUtils.provideReviewViewModelFactory(context, mMovie.getId());
         mReviewViewModel = new ViewModelProvider(this, factory).get(ReviewViewModel.class);
@@ -103,13 +88,11 @@ public class ReviewFragment extends Fragment implements ReviewAdapter.ReviewAdap
             @Override
             public void onChanged(@Nullable ReviewResponse reviewResponse) {
                 if (reviewResponse != null) {
-                    // Get the list of reviews
                     mReviews = reviewResponse.getReviewResults();
                     reviewResponse.setReviewResults(mReviews);
                     if (!mReviews.isEmpty()) {
                         mReviewAdapter.addAll(mReviews);
                     } else {
-                        // If there are no reviews, show a message that says no reviews found
                         showNoReviewsMessage();
                     }
                 }

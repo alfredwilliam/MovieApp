@@ -125,7 +125,7 @@
                             android:paddingBottom="@dimen/padding_activity_small"
                             android:paddingLeft="@dimen/padding_activity"
                             android:paddingRight="@dimen/padding_activity"
-                            android:textColor="@color/blue_grey_200_light"
+                            android:textColor="@color/colorAccent"
                             tools:text="Action, Adventure, Animation, Family" />
 
                         <!-- ProgressBar to show the user content is loading -->

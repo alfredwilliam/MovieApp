@@ -22,9 +22,7 @@ import androidx.lifecycle.ViewModel;
 import com.alfred.movieapp.data.MovieEntry;
 import com.alfred.movieapp.data.MovieRepository;
 
-/**
- * {@link ViewModel} for Favorites
- */
+
 public class FavViewModel extends ViewModel {
 
     private final MovieRepository mRepository;

@@ -24,9 +24,6 @@ import androidx.room.Query;
 
 import java.util.List;
 
-/**
- * {@link Dao} which provides an API for all data operations with the MovieDatabase.
- */
 @Dao
 public interface MovieDao {
 

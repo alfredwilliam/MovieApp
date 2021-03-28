@@ -23,13 +23,6 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-/**
- * A {@link MovieDetails} object includes information related to a movie details, for example,
- * budget, genres, runtime, revenue, status, vote count, credits.
- * This class implements Parcelable interface to allow {@link MovieDetails} object to be sent as a Parcel
- *
- * Reference: @see "https://stackoverflow.com/questions/7181526/how-can-i-make-my-custom-objects-parcelable"
- */
 public class MovieDetails implements Parcelable {
 
     @SerializedName("budget")

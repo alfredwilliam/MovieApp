@@ -34,7 +34,6 @@ import static com.alfred.movieapp.utilities.Constant.NUMBER_OF_THREADS_THREE;
  */
 public class AppExecutors {
 
-    // For Singleton instantiation
     private static final Object LOCK = new Object();
     private static com.alfred.movieapp.AppExecutors sInstance;
     private final Executor diskIO;

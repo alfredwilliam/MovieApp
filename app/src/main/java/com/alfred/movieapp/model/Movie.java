@@ -21,10 +21,6 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- * A {@link Movie} object includes information related to a movie.
- * This class implements Parcelable interface to allow {@link Movie} object to be sent as a Parcel
- */
 public class Movie implements Parcelable {
 
     // CREATOR implements the Parcelable.Creator interface

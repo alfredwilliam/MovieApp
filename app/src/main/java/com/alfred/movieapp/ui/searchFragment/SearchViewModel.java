@@ -19,7 +19,6 @@ import static com.alfred.movieapp.utilities.Constant.PAGE_SIZE;
 import static com.alfred.movieapp.utilities.Constant.PREFETCH_DISTANCE;
 
 public class SearchViewModel extends ViewModel {
-    // TODO: Implement the ViewModel
 
     private final MovieRepository mRepository;
 
@@ -32,23 +31,15 @@ public class SearchViewModel extends ViewModel {
         init(sortCriteria);
     }
 
-    /**
-     * Initialize the paged list
-     */
     private void init(String search) {
         Executor executor = Executors.newFixedThreadPool(NUMBER_OF_FIXED_THREADS_FIVE);
 
-        // Create a MovieDataSourceFactory providing DataSource generations
         MovieSearchDataSourceFactory movieDataFactory = new MovieSearchDataSourceFactory(search);
 
-        // Configures how a PagedList loads content from the MovieSearchDataSource
         PagedList.Config config = (new PagedList.Config.Builder())
                 .setEnablePlaceholders(false)
-                // Size hint for initial load of PagedList
                 .setInitialLoadSizeHint(INITIAL_LOAD_SIZE_HINT)
-                // Size of each page loaded by the PagedList
                 .setPageSize(PAGE_SIZE)
-                // Prefetch distance which defines how far ahead to load
                 .setPrefetchDistance(PREFETCH_DISTANCE)
                 .build();
 

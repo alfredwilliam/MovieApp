@@ -22,10 +22,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.alfred.movieapp.data.MovieRepository;
 import com.alfred.movieapp.ui.homeFragment.HomeViewModel;
 
-/**
- * Factory method that allows us to create a ViewModel with a constructor that takes a
- * {@link MovieRepository} and String sortCriteria
- */
+
 public class TopRatingViewModelFactory extends ViewModelProvider.NewInstanceFactory {
 
     private final MovieRepository mRepository;
@@ -38,7 +35,6 @@ public class TopRatingViewModelFactory extends ViewModelProvider.NewInstanceFact
 
     @Override
     public <T extends ViewModel> T create(Class<T> modelClass) {
-        //noinspection unchecked
         return (T) new TopRatingViewModel(mRepository, mSortCriteria);
     }
 }

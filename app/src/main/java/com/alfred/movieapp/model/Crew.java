@@ -21,10 +21,6 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- * A {@link Crew} object includes information related to crew.
- * This class implements Parcelable interface to allow {@link Crew} object to be sent as a Parcel
- */
 public class Crew implements Parcelable {
 
     @SerializedName("job")

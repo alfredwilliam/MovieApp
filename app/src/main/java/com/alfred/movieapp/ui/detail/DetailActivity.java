@@ -241,7 +241,7 @@ public class DetailActivity extends AppCompatActivity implements
                 if (movieEntry != null) {
                     mDetailBinding.tvRuntime.setText(movieEntry.getRuntime());
                     mDetailBinding.tvReleaseYear.setText(movieEntry.getReleaseYear());
-                    mDetailBinding.tvGenre.setText(movieEntry.getGenre());
+                    mDetailBinding.tvGenre.setText("Genres: "+movieEntry.getGenre());
                 }
             }
         });
